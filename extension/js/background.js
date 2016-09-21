@@ -13,11 +13,27 @@
 // });
 
 
-//chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-//  // Use the token.
-//  console.log(token);
-//});
 
+// 09.19(월)
+chrome.identity.getProfileUserInfo(function(userInfo) {
+  console.log("userInfo : ", userInfo);
+});
+
+chrome.identity.getAuthToken({ interactive: true }, function(token) {
+    if (chrome.runtime.lastError) {
+        alert(chrome.runtime.lastError.message);
+        return;
+    }
+    var x = new XMLHttpRequest();
+    x.open('GET', 'https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=' + token);
+    x.onload = function() {
+        alert(x.response);
+        console.log("x response : ", x.response);
+    };
+    x.send();
+});
+
+// console.log("background loaded");
 
 
 // var oauth = ChromeExOAuth.initBackgroundPage({

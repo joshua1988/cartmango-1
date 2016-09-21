@@ -3,7 +3,7 @@
 
   "name": "Cart Mango",
   "description": "This extension shows you the future of online shopping",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": "Captain Pangyo",
 
   "browser_action": {
@@ -33,16 +33,18 @@
     }
   ],
   "permissions": [
-    "tabs", "identity", "<all_urls>", "storage", "http://*/*", "https://*/*",
+    "tabs", "identity", "identity.email", "<all_urls>", "storage", "http://*/*", "https://*/*",
     "https://docs.google.com/feeds/*",
     "https://www.google.com/accounts/OAuthGetRequestToken",
     "https://www.google.com/accounts/OAuthAuthorizeToken",
     "https://www.google.com/accounts/OAuthGetAccessToken"
   ],
   "oauth2": {
-    "client_id": "361454977408-pq63n00gnmbd9tibv7fqsi4j0cv87fb2.apps.googleusercontent.com",
+    "client_id": "361454977408-ldljcghuo8h0lsglh21a61njfijt76gs.apps.googleusercontent.com",
     "scopes": [
-            "https://www.googleapis.com/auth/userinfo.email"
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/userinfo.email"
     ]
   }
+
 }
